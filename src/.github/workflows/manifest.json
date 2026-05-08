@@ -1,0 +1,18 @@
+{
+  "name": "ESP32-C3 BLE Jammer",
+  "version": "1.0.0",
+  "home_assistant_domain": "esp32-c3-ble-jammer",
+  "funding_url": "https://github.com/YOUR_USERNAME/esp32c3-ble-jammer",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-C3",
+      "parts": [
+        { "path": "firmware_files/bootloader.bin", "offset": 4096 },
+        { "path": "firmware_files/partitions.bin", "offset": 32768 },
+        { "path": "firmware_files/boot_app0.bin", "offset": 57344 },
+        { "path": "firmware_files/firmware.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
