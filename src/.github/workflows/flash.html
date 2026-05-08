@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-C3 BLE Jammer Flasher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0a1a;
+            color: #00ff88;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #111122;
+            border: 1px solid #00ff88;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        h1 { font-size: 28px; margin-bottom: 8px; letter-spacing: 2px; }
+        .subtitle { color: #889; margin-bottom: 30px; font-size: 14px; }
+        .info-box {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .info-box span { color: #ffcc00; }
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin: 8px;
+        }
+        .btn-flash {
+            background: #00ff88;
+            color: #000;
+        }
+        .btn-flash:hover { background: #00cc66; transform: scale(1.05); }
+        .btn-download {
+            background: #333;
+            color: #fff;
+        }
+        .btn-download:hover { background: #555; }
+        .status {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #1a1a2e;
+            font-size: 14px;
+            min-height: 50px;
+        }
+        .footer { margin-top: 20px; font-size: 12px; color: #556; }
+        .step { margin: 6px 0; padding: 6px; background: #0d0d1a; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ BLE JAMMER</h1>
+        <p class="subtitle">ESP32-C3 Firmware Flasher</p>
+        
+        <div class="info-box">
+            <div class="step">1️⃣ Connect ESP32-C3 via USB</div>
+            <div class="step">2️⃣ Hold <span>BOOT</span> button → tap <span>RESET</span></div>
+            <div class="step">3️⃣ Click Flash below</div>
+            <div class="step">4️⃣ Select USB port → Wait for completion</div>
+        </div>
+        
+        <script type="module" src="https://unpkg.com/esp-web-tools@9/dist/web/install-button.js?module"></script>
+        <esp-web-install-button manifest="manifest.json">
+            <button slot="activate" class="btn btn-flash">🚀 FLASH FIRMWARE</button>
+            <span slot="unsupported">⚠️ Use Chrome or Edge browser</span>
+            <span slot="not-allowed">⚠️ HTTPS required</span>
+        </esp-web-install-button>
+        
+        <div>
+            <a href="https://github.com/YOUR_USERNAME/esp32c3-ble-jammer/releases" class="btn btn-download">📥 Download .bin Files</a>
+        </div>
+        
+        <div class="status" id="status">
+            Ready — Waiting for action...
+        </div>
+        
+        <div class="footer">
+            ⚡ ESP32-C3 BLE Jammer v1.0 | Flash via Chrome/Edge
+        </div>
+    </div>
+</body>
+</html>
